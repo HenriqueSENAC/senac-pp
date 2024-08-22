@@ -20,55 +20,65 @@
         </section>
     </nav>
     
-    
+    <div class="row">
     <section class="card-section inter-font">
-        <div class="card">
+        <div class="card2">
             <div class="card-topbar"> 
                 <h1>Cadastro</h1>
             </div>
+            
             <form>
                 <!-- INPUTS CADASTRO -->
-                <input type="email" name="TextInput" id="email" placeholder="E-mail" required>
+                <input type="email" name="TextInput" id="email" placeholder="E-mail">
                 <!-- INPUTS DE SENHA -->
                 <input type="password" name="TextInput" id="senha" placeholder="Senha">
-
+                
                 <p>
                     <!-- TOGGLE PSSW -->
                     <input type="checkbox" class="checkbox" onclick="SignInFunction()">
-                        <h60> Mostrar senha</h60>
+                    <h60> Mostrar senha</h60>
                 </p>
-
+                
                 <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
+                
+                <div class="PasswordWarning" id="error-signin">
+                    <h60> Senhas não concidem!</h60>
+                </div>
+                                    
                 <input type="phone" name="TextInput" id="cel" placeholder="N° de celular">
-
+                
                 <button class="buttonCadastro" onclick="cadastrar(event)">Cadastrar-se</button>
             </form>
+
         </div>
-        
 
         <div class="card">
             <div class="card-topbar">
                 <h1>Login</h1>
             </div>
-            <!-- INPUTS LOGIN -->
-            <input type="email" name="TextInput" id="emailLogin" placeholder="E-mail">
-            <!-- INPUT DE SENHA -->
-            <input type="password" name="TextInput" id="senhaLogin" placeholder="Senha">
 
-                <div class="PasswordWarn" id="PasswordWarn">
-                    <h60> Senha incorreta</h60>
-                </div>
+            <form>
+                <!-- INPUTS LOGIN -->
+                <input type="email" name="TextInput" id="emailLogin" placeholder="E-mail">
+                <!-- INPUT DE SENHA -->
+                <input type="password" name="TextInput" id="senhaLogin" placeholder="Senha">
+
+                    <div class="PasswordWarning" id="error-login">
+                        <h60> Credenciais incorretas!</h60>
+                    </div>
                 
-            <p>
-                <!-- TOGGLE PSSW -->
-                <input type="checkbox" class="checkbox" onclick="LoginFunction()">
-                    <h60>Mostrar senha</h60>  
-            </p>
-            <button class="buttonLogin" onclick="logar()" id="handleSubmit">Log-in</button>
-            
-                </div>
+                <p>
+                    <!-- TOGGLE PSSW -->
+                    <input type="checkbox" class="checkbox" onclick="LoginFunction()">
+                        <h60>Mostrar senha</h60>  
+                </p>
+                <button class="buttonLogin" onclick="logar()" id="handleSubmit">Log-in</button>
+            </form>
+
         </div>
     </section>
+    </div>
+
 
     <!-- INTEGRAÇÃO JS -->
     <script src="JSLoginCadastro.js"></script>

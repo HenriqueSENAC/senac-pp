@@ -11,7 +11,8 @@ async function cadastrar(event) {
         alert('Porfavor preencha os campos necessários!');
     } else {
         if(senhaAuth.trim() != senha.trim()) {
-            alert('Senhas não concidem');
+            PSWarningSignin();
+            // Simplesmente não quer funcionar!!! 
         } else {
             let data = {email, senha, cel}
 
@@ -20,14 +21,6 @@ async function cadastrar(event) {
                 headers: {"Content-type": "application/json;charset=UTF-8"},
                 body: JSON.stringify(data)
             });
-
-            let content = await response.json();    
-                console.log("content")
-            if(content.success) {
-                alert("Sucesso")
-            } else {
-                alert('Erro');
-            }
         }
     }
 }
@@ -59,7 +52,7 @@ button.onclick = async function() {
           window.location.replace("MainPage.html")
 
         } else {
-          alert('Error')
+          PSWarningLogin();
         }
     }}
 
@@ -83,4 +76,29 @@ function LoginFunction() {
     } else {
         x.type = "password";
     }
-}   
+};   
+
+// PasswordAlerts
+function PSWarningLogin() {
+    var Warning = document.getElementById('error-login');
+    if (Warning.style.display === 'none') {
+        Warning.style.display = 'block';
+        setTimeout(function() {
+            Warning.style.display = 'none';    
+        }, 5000);
+    } else {
+        Warning.style.display = 'none';
+    }
+};
+
+function PSWarningSignin() {
+    var Warning = document.getElementById('error-signin');
+    if (Warning.style.display === 'none') {
+        Warning.style.display = 'block';
+        setTimeout(function() {
+            Warning.style.display = 'none';    
+        }, 5000);
+    } else {
+        Warning.style.display = 'none';
+    }
+};

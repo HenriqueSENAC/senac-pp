@@ -18,36 +18,30 @@ async function login(request, response) {
     connection.query(query, params, (err, results) => {
         try {            
             if (results.length > 0) {            
-                if (request.body.senha != results[0].senha) {     
-                    console.log("Senha incorreta", results)              
-                } if (request.body.senha === results[0].senha) {
-                        console.log("Senha correta", results)
-                        // fiz um monte de coisa aqui que tem q arrumar e rever
-                        // * JS não alerta caso a senha esteja incorreta mas aparece no Console
-                        // Código antigo ta no github do andrei qualquer coisa
+                if (request.body.senha === results[0].senha) {
+                    console.log("Senha correta", results)
+                    const id = results[0].id_cadastro;                       
                         
+                    response
+                        .status(200)
+                        .json({
+                            success: true,
+                            message: `Sucesso! Usuário conectado.`,
+                            data: results
+                        });                    
+                } else {
+                    if(request.body.senha != results[0].senha) { 
+                        console.log("Senha Incorreta")
+                            .status(400)
+                            .json({
+                                success: false,
+                                message: `Não foi possível conectar`,
+                                query: err.sql,
+                                sqlMessage: err.sqlMessage
+                            });             
                     }
-
-                const id = results[0].id_cadastro;                       
-                    
-                response
-                    .status(200)
-                    .json({
-                        success: true,
-                        message: `Sucesso! Usuário conectado.`,
-                        data: results
-                    });                    
-            } else {
-                console.log("Senha Incorreta", response)
-                response
-                    .status(400)
-                    .json({
-                        success: false,
-                        message: `Não foi possível realizar a remoção. Verifique os dados informados`,
-                        query: err.sql,
-                        sqlMessage: err.sqlMessage
-                    });
-            }
+            }};
+            
         } catch (e) { // Caso aconteça algum erro na execução
             response.status(400).json({
                     succes: false,
