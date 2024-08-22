@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <title>FireAware: Prevenção e Ajuda</title>
+    <link rel="stylesheet" href="CSSLoginCadastro.css">
     <link href="https://css.gg/css" rel="stylesheet"/>
 </head>
 <body class="inter-font">
 
     <!-- NAVBAR -->
     <nav>
-        <img src="Logo.png">
+        <img src="../Logo.png">
         <section class="nav-text inter-font">
-            <a href="#home"><i class="gg-home"> </i>Home</a>
+            <a href="MainPage.html"><i class="gg-home"> </i>Home</a>
             <a href="#ajuda"><i class="gg-add"> </i>Ajuda</a>
+            <a href="LoginCadastro.html" id="paginaAtual"><i class="gg-list"> </i>Login</a>
         </section>
     </nav>
     
@@ -33,7 +35,7 @@
                 <p>
                     <!-- TOGGLE PSSW -->
                     <input type="checkbox" class="checkbox" onclick="SignInFunction()">
-                        Mostrar senha
+                        <h60> Mostrar senha</h60>
                 </p>
 
                 <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
@@ -52,17 +54,23 @@
             <input type="email" name="TextInput" id="emailLogin" placeholder="E-mail">
             <!-- INPUT DE SENHA -->
             <input type="password" name="TextInput" id="senhaLogin" placeholder="Senha">
-            
+
+                <div class="PasswordWarn" id="PasswordWarn">
+                    <h60> Senha incorreta</h60>
+                </div>
+                
             <p>
                 <!-- TOGGLE PSSW -->
                 <input type="checkbox" class="checkbox" onclick="LoginFunction()">
-                    Mostrar senha
+                    <h60>Mostrar senha</h60>  
             </p>
             <button class="buttonLogin" onclick="logar()" id="handleSubmit">Log-in</button>
+            
+                </div>
         </div>
     </section>
 
     <!-- INTEGRAÇÃO JS -->
-    <script src="script.js"></script>
+    <script src="JSLoginCadastro.js"></script>
 </body>
 </html>
