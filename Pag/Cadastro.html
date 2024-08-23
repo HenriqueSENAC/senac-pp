@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FireAware: Prevenção e Ajuda</title>
+    <link rel="stylesheet" href="CSSLoginCadastro.css">
+    <link href="https://css.gg/css" rel="stylesheet"/>
+</head>
+<body class="inter-font">
+
+    <!-- NAVBAR -->
+    <nav>
+        <img src="../Logo.png">
+        <section class="nav-text inter-font">
+            <a href="MainPage.html"><i class="gg-home"> </i>Home</a>
+            <a href="#ajuda"><i class="gg-add"> </i>Ajuda</a>
+            <a href="LoginCadastro.html" id="paginaAtual"><i class="gg-list"> </i>Entrar</a>
+        </section>
+    </nav>
+    
+    <div class="row">
+    <section class="card-section inter-font">
+        <div class="card2">
+            <div class="card-topbar"> 
+                <h1>Cadastro</h1>
+            </div>
+            
+            <!-- INPUTS CADASTRO -->
+            <input type="email" name="TextInput" id="email" placeholder="E-mail">
+            <!-- INPUTS DE SENHA -->
+            <input type="password" name="TextInput" id="senha" placeholder="Senha">
+            
+            <p>
+                <!-- TOGGLE PSSW -->
+                <input type="checkbox" class="checkbox" onclick="SignInFunction()">
+                <h60> Mostrar senha</h60>
+            </p>
+            
+            <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
+            
+            <div class="PasswordWarning" id="error-signin">
+                <h60>Senhas não concidem!</h60>
+            </div>
+            
+                <input type="phone" name="TextInput" id="cel" placeholder="N° de celular">
+
+            <form class="form">
+                <button class="buttonAltMargin buttonCadastro" onclick="cadastrar(event)">Cadastrar-se</button>
+                <a href="Login.html" class="login-redirect">Possui uma conta?</a>
+            </form>
+
+        </div>
+    </section>
+    </div>
+
+    <!-- INTEGRAÇÃO JS -->
+    <script src="JSLoginCadastro.js"></script>
+</body>
+</html>

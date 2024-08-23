@@ -16,48 +16,17 @@
         <section class="nav-text inter-font">
             <a href="MainPage.html"><i class="gg-home"> </i>Home</a>
             <a href="#ajuda"><i class="gg-add"> </i>Ajuda</a>
-            <a href="LoginCadastro.html" id="paginaAtual"><i class="gg-list"> </i>Login</a>
+            <a href="Login.html" id="paginaAtual"><i class="gg-list"> </i>Entrar</a>
         </section>
     </nav>
     
     <div class="row">
     <section class="card-section inter-font">
-        <div class="card2">
-            <div class="card-topbar"> 
-                <h1>Cadastro</h1>
-            </div>
-            
-            <form>
-                <!-- INPUTS CADASTRO -->
-                <input type="email" name="TextInput" id="email" placeholder="E-mail">
-                <!-- INPUTS DE SENHA -->
-                <input type="password" name="TextInput" id="senha" placeholder="Senha">
-                
-                <p>
-                    <!-- TOGGLE PSSW -->
-                    <input type="checkbox" class="checkbox" onclick="SignInFunction()">
-                    <h60> Mostrar senha</h60>
-                </p>
-                
-                <input type="password" name="TextInput" id="senhaAuth" placeholder="Confirmar senha">
-                
-                <div class="PasswordWarning" id="error-signin">
-                    <h60> Senhas não concidem!</h60>
-                </div>
-                                    
-                <input type="phone" name="TextInput" id="cel" placeholder="N° de celular">
-                
-                <button class="buttonCadastro" onclick="cadastrar(event)">Cadastrar-se</button>
-            </form>
-
-        </div>
-
         <div class="card">
             <div class="card-topbar">
                 <h1>Login</h1>
             </div>
 
-            <form>
                 <!-- INPUTS LOGIN -->
                 <input type="email" name="TextInput" id="emailLogin" placeholder="E-mail">
                 <!-- INPUT DE SENHA -->
@@ -72,13 +41,18 @@
                     <input type="checkbox" class="checkbox" onclick="LoginFunction()">
                         <h60>Mostrar senha</h60>  
                 </p>
-                <button class="buttonLogin" onclick="logar()" id="handleSubmit">Log-in</button>
-            </form>
 
+            <form class="formAlt">
+                <button class="buttonLogin" onclick="logar()" id="handleSubmit">Log-in</button>
+                    <a href="Cadastro.html" class="login-redirect">Não possui uma conta?</a>
+            </form>
         </div>
     </section>
     </div>
-
+    
+    <div>
+        <img class="background" src="../background.png">
+    </div>
 
     <!-- INTEGRAÇÃO JS -->
     <script src="JSLoginCadastro.js"></script>

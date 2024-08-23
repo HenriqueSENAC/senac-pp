@@ -69,6 +69,7 @@ nav {
 
   #paginaAtual {
     color: var(--cinza-claro);
+    pointer-events: none;
   }
 
   nav a::after{
