@@ -15,13 +15,13 @@ async function cadastrar(event) {
             // Simplesmente não quer funcionar!!! 
         } else {
             let data = {email, senha, cel}
-            window.location.replace("Login.html");
             const response = await fetch('http://localhost:3005/api/store/user', {
                 method: "POST",
                 headers: {"Content-type": "application/json;charset=UTF-8"},
                 body: JSON.stringify(data)
-
+                
             });
+            window.location.replace("Login.html");
         }
     }
 }
