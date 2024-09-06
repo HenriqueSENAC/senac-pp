@@ -17,7 +17,8 @@ async function login(request, response) {
     // Executa a ação no banco e valida os retornos para o client que realizou a solicitação
     connection.query(query, params, (err, results) => {
         try {            
-            if (results.length > 0) {            
+            if (results.length > 0) {     
+                console.log(results);       
                 if (request.body.senha === results[0].senha) {
                     console.log("Senha correta", results)
                     const id = results[0].id_cadastro;                       

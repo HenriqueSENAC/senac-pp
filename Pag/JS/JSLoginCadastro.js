@@ -3,23 +3,23 @@ async function cadastrar(event) {
     event.preventDefault();
 
     let email = document.getElementById("email").value;
-    let senha = document.getElementById("senha").value;  
+    let senha = document.getElementById("senha").value;
     let senhaAuth = document.getElementById("senhaAuth").value;
-    let cel = document.getElementById("cel").value;  
+    let cel = document.getElementById("cel").value;
 
-    if(email.trim() === '' || senha.trim() === '' || cel.trim() === '') {
+    if (email.trim() === '' || senha.trim() === '' || cel.trim() === '') {
         alert('Porfavor preencha os campos necessários!');
     } else {
-        if(senhaAuth.trim() != senha.trim()) {
+        if (senhaAuth.trim() != senha.trim()) {
             PSWarningSignin();
             // Simplesmente não quer funcionar!!! 
         } else {
-            let data = {email, senha, cel}
+            let data = { email, senha, cel }
             const response = await fetch('http://localhost:3005/api/store/user', {
                 method: "POST",
-                headers: {"Content-type": "application/json;charset=UTF-8"},
+                headers: { "Content-type": "application/json;charset=UTF-8" },
                 body: JSON.stringify(data)
-                
+
             });
             window.location.replace("Login.html");
         }
@@ -30,32 +30,34 @@ async function cadastrar(event) {
 // Login
 let button = document.getElementById("handleSubmit");
 
-button.onclick = async function() {
-  let email = document.getElementById("emailLogin").value;
-  let senha = document.getElementById("senhaLogin").value;  
-   
+button.onclick = async function (e) {
+    e.preventDefault();
 
-    if(email.trim() === '' || senha.trim() === '') {
+    let email = document.getElementById("emailLogin").value;
+    let senha = document.getElementById("senhaLogin").value;
+
+
+    if (email.trim() === '' || senha.trim() === '') {
         alert('Credenciais incorretas');
     } else {
-        let data = {email,senha}
+        let data = { email, senha }
 
         const response = await fetch('http://localhost:3005/api/auth/login', {
-          method: "POST",
-          headers: {"Content-type": "application/json;charset=UTF-8"},
-          body: JSON.stringify(data)
+            method: "POST",
+            headers: { "Content-type": "application/json;charset=UTF-8" },
+            body: JSON.stringify(data)
         });
 
-        let content = await response.json();    
+        let content = await response.json();
 
-        if(content.success) {
-          alert("Login feito");
-        //   window.location.replace("MainPage.html")
-
+        if (content.success) {
+            alert("Login feito");
+            window.location.replace("../MainPage.html")
         } else {
-          PSWarningLogin();
+            PSWarningLogin();
         }
-    }}
+    }
+}
 
 
 // ShowPSSWRD
@@ -77,15 +79,15 @@ function LoginFunction() {
     } else {
         x.type = "password";
     }
-};   
+};
 
 // PasswordAlerts
 function PSWarningLogin() {
     var Warning = document.getElementById('error-login');
     if (Warning.style.display === 'none') {
         Warning.style.display = 'block';
-        setTimeout(function() {
-            Warning.style.display = 'none';    
+        setTimeout(function () {
+            Warning.style.display = 'none';
         }, 5000);
     } else {
         Warning.style.display = 'none';
@@ -96,8 +98,8 @@ function PSWarningSignin() {
     var Warning = document.getElementById('error-signin');
     if (Warning.style.display === 'none') {
         Warning.style.display = 'block';
-        setTimeout(function() {
-            Warning.style.display = 'none';    
+        setTimeout(function () {
+            Warning.style.display = 'none';
         }, 5000);
     } else {
         Warning.style.display = 'none';
