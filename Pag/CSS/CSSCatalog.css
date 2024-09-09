@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-mode);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* CORE */
+:root{
+    --vermelho-escuro: #640404;
+    --vermelho: #790606;   
+    --cinza-escuro: #161616;
+    --cinza: #252525;
+    --cinza-claro: #474747;
+    --input: #ffffff;
+    --inputborder: #BABABA;
+    --preto: #000000;
+    --text-dm: #cecece;
+    --dark-mode: #121212;
+} 
+
+.inter-font {
+    font-family: "Inter", sans-serif;
+    font-weight: 1;
+    font-style: normal;
+  }
