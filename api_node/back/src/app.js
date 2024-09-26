@@ -29,6 +29,8 @@ app.use(express.json());
 app.use(cors());
 app.use(fileupload());
 
+app.use('uploads', express.static(path.join(__dirname, "uploads")));
+
 // Habilitar as rotas na aplicação
 app.use('/api/auth', loginRouter);
 app.use('/api', CatalogRouter);

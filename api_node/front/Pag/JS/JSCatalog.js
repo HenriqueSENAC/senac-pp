@@ -1,10 +1,10 @@
-let button = document.getElementById("enviar")
+let button = document.getElementById("handleSubmit")
 
 button.onclick = async function() {
     let form = document.getElementById("formulario");
     let dadosForm = new FormData(form);
     
-    const response = await fetch('http://localhost:3005/api/store/restaurante', {
+    const response = await fetch('http://localhost:3005/api/store/catalog', {
         method: "POST",
         body: dadosForm
     })
