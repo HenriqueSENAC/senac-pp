@@ -31,7 +31,6 @@ async function storeCatalog(request, response) {
             })
         }
 
-        console.log('nao deu bosta aqui')
         const params = Array(
             request.body.item_name,
             request.body.item_description,
@@ -39,10 +38,8 @@ async function storeCatalog(request, response) {
             imagemNome
         )
     
-        console.log('nao deu bosta aqui 2')
         const query = "INSERT INTO catalog(item_name, item_description, item_link, item_img) VALUES(?, ?, ?, ?)";
 
-        console.log('nao deu bosta aqui 3')
         connection.query(query, params, (err, results) => {
             if(results) {
                 response.status(200).json({
