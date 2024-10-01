@@ -61,7 +61,7 @@ async function storeCatalog(request, response) {
 }
 
 async function getCatalog(request, response) {
-    const query = "SELECT * FROM catalog";
+    const query = "SELECT * FROM catalog order by id";
 
     connection.query(query, (err, results ) => {
         if(results) {

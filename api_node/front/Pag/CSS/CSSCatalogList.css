@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.catalog-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+
+.catalog-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 28%;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.catalog-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.catalog-card h2 {
+    margin: 8px 0;
+    font-size: 1.2em;
+}
+
+.catalog-card p {
+    color: #555;
+    font-size: 0.9em; 
+    margin: 5px 0;
+}
+
+
+.catalog-card:hover {
+    transform: scale(1.05);
+}
